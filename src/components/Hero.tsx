@@ -136,7 +136,7 @@ export const Hero: React.FC = () => {
                     transition={{ duration: 1.2, delay: 0.4, ease: [0.76, 0, 0.24, 1] }}
                 >
                     <img
-                        src={`src/assets/ChatGPT Image Jun 11, 2026, 12_20_03 PM.png`}
+                        src={`https://images.meigen.ai/generations/2026-07/a543b085-dc25-4ed3-94e2-b091bacab9a8.webp`}
                         alt="Manas Jha portrait"
                         className="absolute inset-0 w-full h-full object-cover object-top md:object-[center_15%]"
                     />
