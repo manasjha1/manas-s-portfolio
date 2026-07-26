@@ -81,8 +81,8 @@ export const Archive: React.FC = () => {
                             LEARNING LOG
                         </h2>
                     </div>
-                    <p className="font-sans text-xs md:text-sm text-muted max-w-xs lowercase">
-                        a log of core subjects currently studying, small sandboxes, and structural experiments completed.
+                    <p className="font-sans text-xs md:text-sm text-muted max-w-xs">
+                        A log of core subjects currently studying, small sandboxes, and structural experiments completed.
                     </p>
                 </div>
 
@@ -150,8 +150,8 @@ export const Archive: React.FC = () => {
                                     animate={{
                                         opacity: 1,
                                         scale: 1,
-                                        x: mousePosition.x + 20,
-                                        y: mousePosition.y - 120, // Offset above cursor
+                                        x: mousePosition.x + 80,
+                                        y: mousePosition.y - 280, // Offset above cursor
                                     }}
                                     exit={{ opacity: 0, scale: 0.85, y: -20 }}
                                     transition={{
