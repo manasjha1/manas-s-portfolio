@@ -71,7 +71,7 @@ function App() {
       <Header />
 
       {/* 4. Portfolio Sections Container */}
-      <main className="w-full flex flex-col relative z-10 overflow-hidden">
+      <main className="w-full flex flex-col relative z-10 overflow-hidden mx-auto">
         <Hero />
         <Intro />
         <Ticker />
