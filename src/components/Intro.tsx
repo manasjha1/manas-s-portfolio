@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, useInView, useMotionValue, animate } from 'framer-motion';
+import { motion, useInView, useMotionValue, animate, type Easing } from 'framer-motion';
 
 // An animated counter component
 const CounterItem: React.FC<{ value: number; suffix?: string; label: string }> = ({ value, suffix = '', label }) => {
@@ -49,13 +49,14 @@ export const Intro: React.FC = () => {
         },
     };
 
+    const customEase: Easing = [0.6, 0.05, 0.01, 0.9];
     const lineVariants = {
         hidden: { y: "100%" },
         visible: {
             y: 0,
             transition: {
                 duration: 0.6,
-                ease: [0.6, 0.05, 0.01, 0.9] as const,
+                ease: customEase,
             },
         },
     }
