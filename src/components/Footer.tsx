@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export const Footer: React.FC = () => {
     const cinematicRef = useRef<HTMLDivElement>(null);
@@ -8,19 +8,18 @@ export const Footer: React.FC = () => {
     // Scroll tracking for cinematic effects
     const { scrollYProgress } = useScroll({
         target: cinematicRef,
-        offset: ['start end', 'end start'],
+        offset: ["start end", "end start"],
     });
 
     // Background texture scales from 1.12 to 1.0 as it scrolls through
     const bgScale = useTransform(scrollYProgress, [0, 0.6], [1.12, 1.0]);
 
     // Cinematic card moves from xPercent: 120 to 0 and rotates
-    const cardX = useTransform(scrollYProgress, [0, 0.5], ['60%', '0%']);
+    const cardX = useTransform(scrollYProgress, [0, 0.5], ["60%", "0%"]);
     const cardOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
 
     return (
         <footer className="w-full flex flex-col bg-ink text-paper relative overflow-hidden">
-
             {/* 1. Cinematic Closing Statement Section */}
             <div
                 ref={cinematicRef}
@@ -52,7 +51,6 @@ export const Footer: React.FC = () => {
 
                 {/* Cinematic Card element */}
                 <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row lg:items-center justify-between gap-12 relative z-10 text-left">
-
                     {/* Statement text */}
                     <div className="max-w-2xl">
                         <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-accent block mb-4">
@@ -69,29 +67,39 @@ export const Footer: React.FC = () => {
                         style={{
                             x: cardX,
                             opacity: cardOpacity,
-                            transformStyle: 'preserve-3d',
+                            transformStyle: "preserve-3d",
                         }}
                     >
                         {/* Top row */}
                         <div className="flex justify-between items-center w-full border-b border-ink/10 pb-4">
-                            <span className="font-mono text-[10px] uppercase font-bold text-accent">M. JHA</span>
-                            <span className="font-sans text-[9px] tracking-widest opacity-60">DELHI, INDIA</span>
+                            <span className="font-mono text-[10px] uppercase font-bold text-accent">
+                                M. JHA
+                            </span>
+                            <span className="font-sans text-[9px] tracking-widest opacity-60">
+                                DELHI, INDIA
+                            </span>
                         </div>
 
                         {/* Middle logo / graphic */}
                         <div className="my-10 flex flex-col justify-center items-center text-center">
-                            <img src="src/assets/meigen-d47bc070-5252-4b89-9137-a159023356f5.png" alt="middle logo" />
+                            <img
+                                src="https://images.meigen.ai/generations/2026-07/a5534d59-75eb-405c-9882-45c8b63933a3.webp"
+                                alt="Manas Jha Photo"
+                            />
                         </div>
 
                         {/* Bottom row info */}
                         <div className="flex justify-between items-end border-t border-ink/10 pt-4 w-full">
-                            <span className="font-mono text-[9px] text-ink/60">STATUS: AVAILABLE</span>
-                            <span className="font-display font-semibold text-lg hover:text-accent duration-200">2029 &copy;</span>
+                            <span className="font-mono text-[9px] text-ink/60">
+                                STATUS: AVAILABLE
+                            </span>
+                            <span className="font-display font-semibold text-lg hover:text-accent duration-200">
+                                2029 &copy;
+                            </span>
                         </div>
                     </motion.div>
-
-                </div >
-            </div >
+                </div>
+            </div>
 
             {/* 2. Contact Grid Section */}
             <div
@@ -99,26 +107,29 @@ export const Footer: React.FC = () => {
                 className="w-full px-6 py-24 md:py-36 border-b border-paper/10"
             >
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 text-left">
-
                     {/* Big Let's build text (span 6) */}
                     <div className="lg:col-span-6 flex flex-col gap-6">
                         <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-accent leading-none">
                             07 / CONTACT
                         </span>
                         <h2 className="font-display font-medium text-5xl md:text-8xl uppercase tracking-tighter leading-none select-none">
-                            LET'S BUILD<br />SOMETHING.
+                            LET'S BUILD
+                            <br />
+                            SOMETHING.
                         </h2>
                         <p className="font-sans text-xs md:text-sm text-neutral-400 font-light leading-relaxed max-w-sm mt-4 lowercase">
-                            seeking an internships, project development collaboration, or just looking to say hello. drop me a message below.
+                            seeking an internships, project development collaboration, or just
+                            looking to say hello. drop me a message below.
                         </p>
                     </div>
 
                     {/* Contact Details grid (span 6) */}
                     <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-10">
-
                         {/* Email column */}
                         <div className="flex flex-col gap-3">
-                            <span className="font-sans text-[10px] uppercase tracking-widest font-semibold text-accent">email address</span>
+                            <span className="font-sans text-[10px] uppercase tracking-widest font-semibold text-accent">
+                                email address
+                            </span>
                             <a
                                 href="mailto:manasjha384@gmail.com"
                                 className="font-display font-medium text-lg md:text-2xl uppercase tracking-wide hover:text-accent transition-colors duration-300 wrap-break-word"
@@ -130,7 +141,9 @@ export const Footer: React.FC = () => {
 
                         {/* Phone column */}
                         <div className="flex flex-col gap-3">
-                            <span className="font-sans text-[10px] uppercase tracking-widest font-semibold text-accent">phone line</span>
+                            <span className="font-sans text-[10px] uppercase tracking-widest font-semibold text-accent">
+                                phone line
+                            </span>
                             <a
                                 href="tel:8826929757"
                                 className="font-display font-medium text-lg md:text-2xl uppercase tracking-wide hover:text-accent transition-colors duration-300"
@@ -142,7 +155,9 @@ export const Footer: React.FC = () => {
 
                         {/* Github Link */}
                         <div className="flex flex-col gap-3">
-                            <span className="font-sans text-[10px] uppercase tracking-widest font-semibold text-accent">version control</span>
+                            <span className="font-sans text-[10px] uppercase tracking-widest font-semibold text-accent">
+                                version control
+                            </span>
                             <a
                                 href="https://github.com/manasjha1"
                                 target="_blank"
@@ -156,34 +171,61 @@ export const Footer: React.FC = () => {
 
                         {/* Location */}
                         <div className="flex flex-col gap-1">
-                            <span className="font-sans text-[10px] uppercase tracking-widest font-semibold text-accent">base location</span>
+                            <span className="font-sans text-[10px] uppercase tracking-widest font-semibold text-accent">
+                                base location
+                            </span>
                             <span className="font-display font-medium text-lg md:text-xl uppercase tracking-wide text-neutral-400 select-none">
                                 Delhi, India
                             </span>
                         </div>
-
                     </div>
                 </div>
-            </div >
+            </div>
 
             {/* 3. Global Bottom Navigation Recap */}
-            <div className="w-full px-6 py-8 border-t border-paper/5 text-left bg-[#090909] text-xs font-sans text-neutral-500 font-light select-none" >
+            <div className="w-full px-6 py-8 border-t border-paper/5 text-left bg-[#090909] text-xs font-sans text-neutral-500 font-light select-none">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div className="flex flex-wrap gap-x-8 gap-y-2">
-                        <a href="#hero" className="hover:text-accent transition-colors duration-200">BACK TO TOP</a>
-                        <a href="#projects" className="hover:text-accent transition-colors duration-200">SELECTED WORK</a>
-                        <a href="#skills" className="hover:text-accent transition-colors duration-200">CAPABILITIES</a>
-                        <a href="#engagement" className="hover:text-accent transition-colors duration-200">WAYS TO WORK</a>
-                        <a href="#archive" className="hover:text-accent transition-colors duration-200">LOGBOOK</a>
+                        <a
+                            href="#hero"
+                            className="hover:text-accent transition-colors duration-200"
+                        >
+                            BACK TO TOP
+                        </a>
+                        <a
+                            href="#projects"
+                            className="hover:text-accent transition-colors duration-200"
+                        >
+                            SELECTED WORK
+                        </a>
+                        <a
+                            href="#skills"
+                            className="hover:text-accent transition-colors duration-200"
+                        >
+                            CAPABILITIES
+                        </a>
+                        <a
+                            href="#engagement"
+                            className="hover:text-accent transition-colors duration-200"
+                        >
+                            WAYS TO WORK
+                        </a>
+                        <a
+                            href="#archive"
+                            className="hover:text-accent transition-colors duration-200"
+                        >
+                            LOGBOOK
+                        </a>
                     </div>
 
                     <div className="flex items-center gap-6">
-                        <span>© {new Date().getFullYear()} MANAS JHA. ALL RIGHTS RECREATED.</span>
+                        <span>
+                            © {new Date().getFullYear()} MANAS JHA. ALL RIGHTS RECREATED.
+                        </span>
                         {/* <span className="text-[10px] text-accent tracking-widest font-bold">NORTH/FORM STYLE DIRECTORY</span> */}
                     </div>
                 </div>
-            </div >
-
-        </footer >
+            </div>
+        </footer>
     );
 };

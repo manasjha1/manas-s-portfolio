@@ -81,7 +81,7 @@ export const Intro: React.FC = () => {
                         >
                             {!imageError ? (
                                 <img
-                                    src="src/assets/meigen-d47bc070-5252-4b89-9137-a159023356f5.png"
+                                    src="https://images.meigen.ai/generations/2026-07/d47bc070-5252-4b89-9137-a159023356f5.webp"
                                     alt="Manas Jha"
                                     onError={() => setImageError(true)}
                                     className="w-full h-full object-cover grayscale contrast-[1.10] hover:grayscale-20 transition-all duration-700"
