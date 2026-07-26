@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
 
@@ -18,6 +17,7 @@ import { Capabilities } from './components/Capabilities';
 import { Engagement } from './components/Engagement';
 import { Archive } from './components/Archive';
 import { Footer } from './components/Footer';
+import { useEffect, useState } from 'react';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

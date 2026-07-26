@@ -50,12 +50,15 @@ export const Intro: React.FC = () => {
     };
 
     const lineVariants = {
-        hidden: { y: '100%' },
+        hidden: { y: "100%" },
         visible: {
             y: 0,
-            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+            transition: {
+                duration: 0.6,
+                ease: [0.6, 0.05, 0.01, 0.9] as const,
+            },
         },
-    };
+    }
 
     return (
         <section
