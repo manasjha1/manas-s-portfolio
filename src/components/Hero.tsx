@@ -213,8 +213,8 @@ export const Hero: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 1.2 }}
                     >
-                        <p className="font-sans text-xs md:text-sm text-muted leading-relaxed tracking-wider font-light lowercase">
-                            building responsive web apps with react, tailwind & shadcn/ui. currently exploring full-stack integration.
+                        <p className="font-sans text-xs md:text-sm text-muted leading-relaxed tracking-wider font-light">
+                            Building responsive web apps with react, tailwind & shadcn/ui. currently exploring full-stack integration.
                         </p>
                     </motion.div>
                 </motion.div>
