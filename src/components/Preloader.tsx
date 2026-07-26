@@ -24,7 +24,7 @@ export const Preloader: React.FC = () => {
 
     return (
         <motion.div
-            className="fixed inset-0 bg-[#0b0b0b] text-[#efeee9] z-[1000] flex flex-col justify-between p-8 md:p-12 select-none pointer-events-none"
+            className="fixed inset-0 bg-ink text-paper z-1000 flex flex-col justify-between p-8 md:p-12 select-none pointer-events-none"
             initial={{ y: 0 }}
             exit={{
                 y: '-100vh',

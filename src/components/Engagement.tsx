@@ -35,12 +35,12 @@ export const Engagement: React.FC = () => {
     return (
         <section
             id="engagement"
-            className="w-full bg-[#efeee9] text-[#0b0b0b] px-6 py-24 md:py-36 global-border-hairline border-b overflow-hidden"
+            className="w-full bg-paper text-ink px-6 py-24 md:py-36 global-border-hairline border-b overflow-hidden"
         >
             <div className="max-w-7xl mx-auto">
 
                 {/* Header Title */}
-                <div className="text-left w-full border-b border-[#0b0b0b]/15 pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pointer-events-none">
+                <div className="text-left w-full border-b border-ink/15 pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pointer-events-none">
                     <div className="flex flex-col gap-2">
                         <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-accent leading-none">
                             04 / AVAILABILITY
@@ -49,21 +49,21 @@ export const Engagement: React.FC = () => {
                             WAYS TO WORK
                         </h2>
                     </div>
-                    <p className="font-sans text-xs md:text-sm text-muted max-w-xs lowercase">
-                        available routes to leverage my skills. whether immediate projects or long-term growth planning, lets collaborate.
+                    <p className="font-sans text-xs md:text-sm text-muted max-w-xs">
+                        Available routes to leverage my skills. whether immediate projects or long-term growth planning, lets collaborate.
                     </p>
                 </div>
 
                 {/* Hover Expand Plans Grid */}
-                <div className="flex flex-col md:flex-row md:items-stretch gap-6 w-full mt-16 min-h-[480px]">
+                <div className="flex flex-col md:flex-row md:items-stretch gap-6 w-full mt-16 min-h-120">
                     {cards.map((card) => {
                         const isDark = card.theme === 'dark';
                         return (
                             <motion.div
                                 key={card.num}
                                 className={`flex-1 flex flex-col justify-between p-8 border cursor-pointer select-none transition-colors duration-500 rounded-[3px] shadow-sm hover:shadow-xl relative overflow-hidden ${isDark
-                                        ? 'bg-[#111] text-[#efeee9] border-[#efeee9]/10'
-                                        : 'bg-[#efeee9] text-[#0b0b0b] border-[#0b0b0b]/10'
+                                    ? 'bg-[#111] text-paper border-paper/10'
+                                    : 'bg-paper text-ink border-ink/10'
                                     }`}
                                 whileHover={{
                                     flexGrow: 1.32,
@@ -109,8 +109,8 @@ export const Engagement: React.FC = () => {
                                         target="_blank"
                                         rel="noreferrer"
                                         className={`w-full py-3.5 text-center text-xs font-sans uppercase font-bold tracking-widest transition-colors duration-300 rounded-[3px] border ${isDark
-                                                ? 'bg-[#d7ff45] text-[#0b0b0b] border-[#d7ff45] hover:bg-transparent hover:text-[#d7ff45]'
-                                                : 'bg-[#0b0b0b] text-[#efeee9] border-[#0b0b0b] hover:bg-transparent hover:text-[#0b0b0b]'
+                                            ? 'bg-acid text-ink border-acid hover:bg-transparent hover:text-acid'
+                                            : 'bg-ink text-paper border-ink hover:bg-transparent hover:text-ink'
                                             }`}
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}

@@ -66,13 +66,13 @@ export const Archive: React.FC = () => {
     return (
         <section
             id="archive"
-            className="w-full bg-[#efeee9] text-[#0b0b0b] px-6 py-24 md:py-36 global-border-hairline border-b relative"
+            className="w-full bg-paper text-ink px-6 py-24 md:py-36 global-border-hairline border-b relative"
             onMouseMove={handleMouseMove}
         >
             <div className="max-w-7xl mx-auto flex flex-col items-center">
 
                 {/* Title */}
-                <div className="text-left w-full border-b border-[#0b0b0b]/15 pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pointer-events-none">
+                <div className="text-left w-full border-b border-ink/15 pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pointer-events-none">
                     <div className="flex flex-col gap-2">
                         <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-accent leading-none">
                             05 / LOGBOOK
@@ -87,18 +87,18 @@ export const Archive: React.FC = () => {
                 </div>
 
                 {/* Row Table list */}
-                <div className="w-full flex flex-col mt-8 border-t border-[#0b0b0b]/10 relative">
+                <div className="w-full flex flex-col mt-8 border-t border-ink/10 relative">
                     {archiveItems.map((item) => (
                         <div
                             key={item.id}
-                            className="w-full border-b border-[#0b0b0b]/10 py-6 md:py-8 flex flex-col md:flex-row md:items-center justify-between text-left group relative cursor-pointer relative overflow-hidden transition-all duration-300"
+                            className="w-full border-b border-ink/10 py-6 md:py-8 flex flex-col md:flex-row md:items-center justify-between text-left group cursor-pointer relative overflow-hidden transition-all duration-300"
                             onMouseEnter={() => setHoveredItem(item)}
                             onMouseLeave={() => setHoveredItem(null)}
                             data-cursor="hover"
                         >
                             {/* Row hover block transition */}
                             <motion.div
-                                className="absolute inset-0 bg-[#d7ff45] z-0 origin-bottom"
+                                className="absolute inset-0 bg-acid z-0 origin-bottom"
                                 initial={{ scaleY: 0 }}
                                 whileHover={{ scaleY: 1 }}
                                 transition={{ duration: 0.35, ease: [0.76, 0, 0.24, 1] }}
@@ -145,7 +145,7 @@ export const Archive: React.FC = () => {
                         <AnimatePresence>
                             {hoveredItem && (
                                 <motion.div
-                                    className="absolute w-80 bg-[#0b0b0b] text-[#efeee9] p-5 shadow-2xl rounded-[3px] border border-[#efeee9]/10 z-[150] flex flex-col gap-4 text-left"
+                                    className="absolute w-80 bg-ink text-paper p-5 shadow-2xl rounded-[3px] border border-paper/10 z-150 flex flex-col gap-4 text-left"
                                     initial={{ opacity: 0, scale: 0.85, y: -20 }}
                                     animate={{
                                         opacity: 1,
@@ -166,7 +166,7 @@ export const Archive: React.FC = () => {
                                         transform: 'translate3d(0,0,0)',
                                     }}
                                 >
-                                    <div className="flex justify-between items-center border-b border-[#efeee9]/10 pb-2 w-full text-[9px] uppercase tracking-widest text-[#d7ff45] font-semibold font-sans">
+                                    <div className="flex justify-between items-center border-b border-paper/10 pb-2 w-full text-[9px] uppercase tracking-widest text-acid font-semibold font-sans">
                                         <span>{hoveredItem.category}</span>
                                         <span>preview info</span>
                                     </div>
@@ -175,7 +175,7 @@ export const Archive: React.FC = () => {
                                         {hoveredItem.summary}
                                     </p>
 
-                                    <div className="text-[10px] tracking-wider text-muted font-mono flex items-center justify-between border-t border-[#efeee9]/10 pt-2 mt-1">
+                                    <div className="text-[10px] tracking-wider text-muted font-mono flex items-center justify-between border-t border-paper/10 pt-2 mt-1">
                                         <span>SOURCE: {hoveredItem.source}</span>
                                         <span>&copy; M.J</span>
                                     </div>

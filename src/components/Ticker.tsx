@@ -17,7 +17,7 @@ export const Ticker: React.FC = () => {
     const tickerItems = [...words, ...words, ...words, ...words];
 
     return (
-        <div className="relative w-full overflow-hidden bg-[#d7ff45] text-[#0b0b0b] py-4 md:py-6 -rotate-[1.2deg] -ml-[2%] z-20 shadow-lg border-y border-[#0b0b0b]">
+        <div className="relative w-full overflow-hidden bg-acid text-ink py-4 md:py-6 rotate-[-1.2deg] ml-[-2%] z-20 shadow-lg border-y border-ink">
             <div className="flex whitespace-nowrap">
                 {/* Animated Marquee Flex Strip */}
                 <motion.div

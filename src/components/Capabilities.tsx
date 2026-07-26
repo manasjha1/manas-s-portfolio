@@ -57,7 +57,7 @@ export const Capabilities: React.FC = () => {
             details: 'ES6+ JavaScript (async/await, promises, fetch), semantic HTML5 components, and cross-browser CSS styling standards.',
             codeSnippet: `async function fetchWeatherData(city) {
   try {
-    const url = \`\$/api/weather?q=\${city}\`;
+    const url = \`$/api/weather?q=\${city}\`;
     const res = await fetch(url);
     if (!res.ok) throw new Error();
     return await res.json();
@@ -98,7 +98,7 @@ git push origin feature/interactive-nav`
         <section
             ref={containerRef}
             id="skills"
-            className="w-full bg-[#101010] text-[#efeee9] px-6 py-24 md:py-36 relative overflow-hidden"
+            className="w-full bg-[#101010] text-paper px-6 py-24 md:py-36 relative overflow-hidden"
         >
             {/* Decorative abstract elements */}
             <div className="absolute top-1/4 left-1/10 w-96 h-96 rounded-full bg-accent/5 blur-3xl" />
@@ -107,7 +107,7 @@ git push origin feature/interactive-nav`
             <div className="max-w-7xl mx-auto relative z-10">
 
                 {/* Section Header */}
-                <div className="text-left w-full border-b border-[#efeee9]/10 pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div className="text-left w-full border-b border-paper/10 pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div className="flex flex-col gap-2">
                         <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-accent leading-none">
                             03 / EXPERTISE
@@ -116,8 +116,8 @@ git push origin feature/interactive-nav`
                             CAPABILITIES
                         </h2>
                     </div>
-                    <p className="font-sans text-xs md:text-sm text-neutral-400 max-w-sm lowercase">
-                        technical skills developed by building actual applications, resolving design challenges, and applying modern frameworks.
+                    <p className="font-sans text-xs md:text-sm text-neutral-400 max-w-sm">
+                        Technical skills developed by building actual applications, resolving design challenges, and applying modern frameworks.
                     </p>
                 </div>
 
@@ -128,11 +128,11 @@ git push origin feature/interactive-nav`
                 >
 
                     {/* Row list of skills (Sizes: span 7) */}
-                    <div className="lg:col-span-7 flex flex-col w-full border-t border-[#efeee9]/10">
+                    <div className="lg:col-span-7 flex flex-col w-full border-t border-paper/10">
                         {skillRows.map((row, idx) => (
                             <div
                                 key={row.id}
-                                className="w-full border-b border-[#efeee9]/10 py-6 md:py-8 flex flex-col group cursor-crosshair text-left relative overflow-hidden"
+                                className="w-full border-b border-paper/10 py-6 md:py-8 flex flex-col group cursor-crosshair text-left relative overflow-hidden"
                                 onMouseEnter={() => {
                                     setActiveSnippet(row.codeSnippet);
                                     setHoveredIdx(idx);
@@ -153,7 +153,7 @@ git push origin feature/interactive-nav`
                                             {row.num}
                                         </span>
                                         <div className="flex flex-col gap-2 max-w-md">
-                                            <h3 className="font-display font-medium text-xl md:text-2xl uppercase tracking-wider text-[#efeee9] group-hover:text-[#d7ff45] transition-colors duration-300">
+                                            <h3 className="font-display font-medium text-xl md:text-2xl uppercase tracking-wider text-paper group-hover:text-acid transition-colors duration-300">
                                                 {row.name}
                                             </h3>
                                             <p className="font-sans text-xs md:text-sm text-neutral-400 font-light leading-relaxed group-hover:text-neutral-200 transition-colors duration-300">
@@ -165,8 +165,8 @@ git push origin feature/interactive-nav`
                                     {/* Cross sign */}
                                     <div className="hidden md:block self-center mr-4">
                                         <div className="w-5 h-5 flex items-center justify-center relative">
-                                            <span className="absolute w-3.5 h-[1.5px] bg-[#efeee9]/55 group-hover:bg-[#d7ff45] group-hover:rotate-90 transition-transform duration-500" />
-                                            <span className="absolute w-[1.5px] h-3.5 bg-[#efeee9]/55 group-hover:bg-[#d7ff45] group-hover:rotate-90 transition-transform duration-500" />
+                                            <span className="absolute w-3.5 h-[1.5px] bg-paper/55 group-hover:bg-acid group-hover:rotate-90 transition-transform duration-500" />
+                                            <span className="absolute w-[1.5px] h-3.5 bg-paper/55 group-hover:bg-acid group-hover:rotate-90 transition-transform duration-500" />
                                         </div>
                                     </div>
                                 </div>
@@ -175,12 +175,12 @@ git push origin feature/interactive-nav`
                     </div>
 
                     {/* Snippet Preview container (Sizes: span 5) */}
-                    <div className="lg:col-span-5 w-full h-[320px] md:h-[450px] sticky top-[150px] relative pointer-events-none hidden lg:block">
+                    <div className="lg:col-span-5 w-full h-80 md:h-112.5 sticky top-37.5 pointer-events-none hidden lg:block">
                         <AnimatePresence mode="wait">
                             {activeSnippet ? (
                                 <motion.div
                                     key={hoveredIdx}
-                                    className="w-full h-full bg-[#161616] border border-[#efeee9]/10 p-6 flex flex-col justify-between font-mono text-[11px] md:text-xs leading-relaxed text-[#efeee9]/80 shadow-2xl relative"
+                                    className="w-full h-full bg-[#161616] border border-paper/10 p-6 flex flex-col justify-between font-mono text-[11px] md:text-xs leading-relaxed text-paper/80 shadow-2xl relative"
                                     initial={{ opacity: 0, scale: 0.95, rotate: -4 }}
                                     animate={{ opacity: 1, scale: 1, rotate: -3 }}
                                     exit={{ opacity: 0, scale: 0.95, rotate: -4 }}
@@ -188,26 +188,26 @@ git push origin feature/interactive-nav`
                                     style={{ transformOrigin: 'center center' }}
                                 >
                                     {/* Top Bar window decorations */}
-                                    <div className="flex justify-between items-center border-b border-[#efeee9]/5 pb-3 mb-4 w-full">
+                                    <div className="flex justify-between items-center border-b border-paper/5 pb-3 mb-4 w-full">
                                         <div className="flex items-center space-x-1.5">
-                                            <span className="w-2.5 h-2.5 rounded-full bg-[#efeee9]/15" />
-                                            <span className="w-2.5 h-2.5 rounded-full bg-[#efeee9]/15" />
-                                            <span className="w-2.5 h-2.5 rounded-full bg-[#efeee9]/15" />
+                                            <span className="w-2.5 h-2.5 rounded-full bg-paper/15" />
+                                            <span className="w-2.5 h-2.5 rounded-full bg-paper/15" />
+                                            <span className="w-2.5 h-2.5 rounded-full bg-paper/15" />
                                         </div>
-                                        <span className="text-[10px] uppercase font-sans tracking-widest text-[#efeee9]/30">
+                                        <span className="text-[10px] uppercase font-sans tracking-widest text-paper/30">
                                             snippet.ts
                                         </span>
                                     </div>
 
                                     {/* Pre content block */}
                                     <pre className="flex-1 overflow-x-auto select-none overflow-y-hidden text-left py-2 font-mono scrollbar-none">
-                                        <code className="text-[#a5a59f]">
+                                        <code className="text-muted">
                                             {activeSnippet}
                                         </code>
                                     </pre>
 
                                     {/* Bottom bar */}
-                                    <div className="flex justify-between items-center border-t border-[#efeee9]/5 pt-3 mt-4 w-full text-[9px] uppercase font-sans tracking-widest text-accent">
+                                    <div className="flex justify-between items-center border-t border-paper/5 pt-3 mt-4 w-full text-[9px] uppercase font-sans tracking-widest text-accent">
                                         <span>source script code</span>
                                         <span>manas.dev &copy;</span>
                                     </div>
@@ -215,16 +215,16 @@ git push origin feature/interactive-nav`
                             ) : (
                                 // Elegant empty state matching styling rules
                                 <motion.div
-                                    className="w-full h-full border border-dashed border-[#efeee9]/15 flex flex-col items-center justify-center p-8 select-none"
+                                    className="w-full h-full border border-dashed border-paper/15 flex flex-col items-center justify-center p-8 select-none"
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 0.5 }}
                                     exit={{ opacity: 0 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <svg className="w-12 h-12 text-[#efeee9]/20 stroke-[1] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg className="w-12 h-12 text-paper/20 stroke-1 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
                                     </svg>
-                                    <span className="font-display font-medium text-xs text-[#efeee9]/45 uppercase tracking-wider text-center">
+                                    <span className="font-display font-medium text-xs text-paper/45 uppercase tracking-wider text-center">
                                         hover over capabilities to inspect code execution
                                     </span>
                                 </motion.div>
