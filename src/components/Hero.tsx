@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Dot } from 'lucide-react';
+import { LineDotRightHorizontal } from 'lucide-react';
 
 export const Hero: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -136,19 +136,17 @@ export const Hero: React.FC = () => {
                     transition={{ duration: 1.2, delay: 0.4, ease: [0.76, 0, 0.24, 1] }}
                 >
                     <img
-                        src="/assets/hero-portrait.png"
+                        src="src/assets/ChatGPT Image Jun 11, 2026, 12_20_03 PM.png"
                         alt="Manas Jha portrait"
                         className="absolute inset-0 w-full h-full object-cover object-top md:object-[center_15%]"
                     />
 
                     {/* Scroll-driven scan line echoing the portrait's red beam */}
                     <motion.div
-                        className="absolute left-0 right-0 h-0.75 pointer-events-none"
+                        className="absolute inset-0 bg-linear-to-t from-[#131313] via-[#131313]/20 to-transparent"
                         style={{
                             top: scanLineY,
                             opacity: scanGlow,
-                            boxShadow: '0 0 24px 8px rgba(255, 30, 30, 0.55), 0 0 60px 20px rgba(255, 30, 30, 0.25)',
-                            background: 'linear-gradient(90deg, transparent 0%, #ff1e1e 20%, #ff4444 50%, #ff1e1e 80%, transparent 100%)',
                         }}
                     />
 
@@ -173,9 +171,12 @@ export const Hero: React.FC = () => {
                             className="flex items-center gap-2 group cursor-pointer"
                             data-cursor="hover"
                         >
-                            <Dot className="w-1.5 h-1.5 rounded-full text-accent bg-accent animate-ping" />
-                            <span className="font-sans text-xs uppercase tracking-widest font-semibold text-accent">
-                                Frontend Developer — React.js
+                            {/* <Dot className="w-1.5 h-1.5 rounded-full text-accent bg-accent animate-ping" /> */}
+                            <span className="flex items-center gap-2 font-sans text-xs uppercase tracking-widest font-semibold text-accent">
+                                <LineDotRightHorizontal /> Frontend Developer
+                            </span>
+                            <span className="flex items-center gap-2 font-sans text-xs uppercase tracking-widest font-semibold text-accent">
+                                <LineDotRightHorizontal /> UI Designer
                             </span>
                         </motion.div>
                     </div>

@@ -19,12 +19,12 @@ export const Footer: React.FC = () => {
     const cardOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
 
     return (
-        <footer className="w-full flex flex-col bg-[#0b0b0b] text-[#efeee9] relative overflow-hidden">
+        <footer className="w-full flex flex-col bg-ink text-paper relative overflow-hidden">
 
             {/* 1. Cinematic Closing Statement Section */}
             <div
                 ref={cinematicRef}
-                className="w-full min-h-[70vh] md:min-h-screen relative flex items-center justify-center p-6 md:p-12 overflow-hidden border-b border-[#efeee9]/10"
+                className="w-full min-h-[70vh] md:min-h-screen relative flex items-center justify-center p-6 md:p-12 overflow-hidden border-b border-paper/10"
             >
                 {/* Parallax Background Code/UI Texture */}
                 <motion.div
@@ -40,10 +40,10 @@ export const Footer: React.FC = () => {
                         />
                     ) : (
                         // Pure CSS abstract programming texture loop fallback
-                        <div className="w-full h-full bg-[#0b0b0b] relative flex items-center justify-center">
-                            <div className="absolute inset-0 opacity-15 bg-[linear-gradient(rgba(239,238,233,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(239,238,233,0.15)_1px,transparent_1px)] bg-[size:40px_40px]" />
+                        <div className="w-full h-full bg-ink relative flex items-center justify-center">
+                            <div className="absolute inset-0 opacity-15 bg-[linear-gradient(rgba(239,238,233,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(239,238,233,0.15)_1px,transparent_1px)] bg-size-[40px_40px]" />
                             <div className="absolute inset-0 bg-radial-gradient(circle at center, transparent 40%, #0b0b0b 90%)" />
-                            <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#d7ff45] opacity-20">
+                            <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-acid opacity-20">
                                 development.environment.terminal.sandbox.main.tsx
                             </span>
                         </div>
@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
 
                     {/* Animated card: Rotated ~18deg, translates on scroll */}
                     <motion.div
-                        className="w-72 aspect-[3/4] bg-[#efeee9] text-[#0b0b0b] p-6 border border-[#efeee9]/10 rounded-[3px] shadow-2xl relative flex flex-col justify-between self-center lg:self-auto -rotate-[18deg]"
+                        className="w-72 aspect-3/4 bg-paper text-ink p-6 border border-paper/10 rounded-[3px] shadow-2xl relative flex flex-col justify-between self-center lg:self-auto rotate-[-18deg]"
                         style={{
                             x: cardX,
                             opacity: cardOpacity,
@@ -73,19 +73,19 @@ export const Footer: React.FC = () => {
                         }}
                     >
                         {/* Top row */}
-                        <div className="flex justify-between items-center w-full border-b border-[#0b0b0b]/10 pb-4">
+                        <div className="flex justify-between items-center w-full border-b border-ink/10 pb-4">
                             <span className="font-mono text-[10px] uppercase font-bold text-accent">M. JHA</span>
                             <span className="font-sans text-[9px] tracking-widest opacity-60">DELHI, INDIA</span>
                         </div>
 
                         {/* Middle logo / graphic */}
-                        <div className="my-[40px] flex flex-col justify-center items-center text-center">
+                        <div className="my-10 flex flex-col justify-center items-center text-center">
                             <img src="src/assets/meigen-d47bc070-5252-4b89-9137-a159023356f5.png" alt="middle logo" />
                         </div>
 
                         {/* Bottom row info */}
-                        <div className="flex justify-between items-end border-t border-[#0b0b0b]/10 pt-4 w-full">
-                            <span className="font-mono text-[9px] text-[#0b0b0b]/60">STATUS: AVAILABLE</span>
+                        <div className="flex justify-between items-end border-t border-ink/10 pt-4 w-full">
+                            <span className="font-mono text-[9px] text-ink/60">STATUS: AVAILABLE</span>
                             <span className="font-display font-semibold text-lg hover:text-accent duration-200">2029 &copy;</span>
                         </div>
                     </motion.div>
@@ -96,7 +96,7 @@ export const Footer: React.FC = () => {
             {/* 2. Contact Grid Section */}
             <div
                 id="contact"
-                className="w-full px-6 py-24 md:py-36 border-b border-[#efeee9]/10"
+                className="w-full px-6 py-24 md:py-36 border-b border-paper/10"
             >
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 text-left">
 
@@ -121,7 +121,7 @@ export const Footer: React.FC = () => {
                             <span className="font-sans text-[10px] uppercase tracking-widest font-semibold text-accent">email address</span>
                             <a
                                 href="mailto:manasjha384@gmail.com"
-                                className="font-display font-medium text-lg md:text-2xl uppercase tracking-wide hover:text-accent transition-colors duration-300 break-words"
+                                className="font-display font-medium text-lg md:text-2xl uppercase tracking-wide hover:text-accent transition-colors duration-300 wrap-break-word"
                                 data-cursor="hover"
                             >
                                 manasjha384@gmail.com
@@ -167,7 +167,7 @@ export const Footer: React.FC = () => {
             </div >
 
             {/* 3. Global Bottom Navigation Recap */}
-            <div className="w-full px-6 py-8 border-t border-[#efeee9]/5 text-left bg-[#090909] text-xs font-sans text-neutral-500 font-light select-none" >
+            <div className="w-full px-6 py-8 border-t border-paper/5 text-left bg-[#090909] text-xs font-sans text-neutral-500 font-light select-none" >
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div className="flex flex-wrap gap-x-8 gap-y-2">
                         <a href="#hero" className="hover:text-accent transition-colors duration-200">BACK TO TOP</a>
@@ -179,7 +179,7 @@ export const Footer: React.FC = () => {
 
                     <div className="flex items-center gap-6">
                         <span>© {new Date().getFullYear()} MANAS JHA. ALL RIGHTS RECREATED.</span>
-                        <span className="text-[10px] text-accent tracking-widest font-bold">NORTH/FORM STYLE DIRECTORY</span>
+                        {/* <span className="text-[10px] text-accent tracking-widest font-bold">NORTH/FORM STYLE DIRECTORY</span> */}
                     </div>
                 </div>
             </div >
