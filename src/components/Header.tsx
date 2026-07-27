@@ -33,7 +33,7 @@ export const Header: React.FC = () => {
             <motion.header
                 className={`fixed top-0 left-0 w-full z-90 px-6 py-4 ${isScrolled
                     ? 'bg-ink/80 backdrop-blur-md text-paper transition-all duration-500 global-border-hairline border-b'
-                    : 'bg-transparent text-ink'
+                    : 'bg-transparent text-paper'
                     }`}
                 style={{
                     // Apply difference blend mode until scrolled (looks great over dark background)

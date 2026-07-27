@@ -104,23 +104,23 @@ export const Footer: React.FC = () => {
             {/* 2. Contact Grid Section */}
             <div
                 id="contact"
-                className="w-full px-6 py-24 md:py-36 border-b border-paper/10"
+                className="w-full px-6 py-24 md:py-40 border-b border-paper/10"
             >
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 text-left">
                     {/* Big Let's build text (span 6) */}
-                    <div className="lg:col-span-6 flex flex-col gap-6">
+                    <div className="lg:col-span-6 flex flex-col gap-4">
                         <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-accent leading-none">
                             07 / CONTACT
                         </span>
-                        <h2 className="font-display font-medium text-5xl md:text-8xl uppercase tracking-tighter leading-none select-none">
+                        <h2 className="font-display font-bold text-5xl md:text-8xl uppercase tracking-tighter leading-none select-none">
                             LET'S BUILD
                             <br />
                             SOMETHING.
                         </h2>
-                        <p className="font-sans text-xs md:text-sm text-neutral-400 font-light leading-relaxed max-w-sm mt-4 lowercase">
+                        {/* <p className="font-sans text-xs md:text-sm text-neutral-400 font-light leading-relaxed max-w-sm mt-4 lowercase">
                             seeking an internships, project development collaboration, or just
                             looking to say hello. drop me a message below.
-                        </p>
+                        </p> */}
                     </div>
 
                     {/* Contact Details grid (span 6) */}
