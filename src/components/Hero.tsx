@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { LineDotRightHorizontal } from 'lucide-react';
+import portraitVideo from '/src/assets/portraitVideo.mp4'
 
 export const Hero: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -11,8 +12,8 @@ export const Hero: React.FC = () => {
         offset: ['start start', 'end start'],
     });
 
-    const mediaY = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
-    const mediaScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
+    // const mediaY = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
+    // const mediaScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
     const textY = useTransform(scrollYProgress, [0, 1], ['0%', '-15%']);
 
     const portraitY = useTransform(scrollYProgress, [0, 1], ['0%', '18%']);
@@ -20,7 +21,7 @@ export const Hero: React.FC = () => {
     const portraitOpacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 0.85, 0.35]);
     const scanLineY = useTransform(scrollYProgress, [0, 1], ['38%', '52%']);
     const scanGlow = useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 1, 0.2]);
-    const heroFade = useTransform(scrollYProgress, [0, 0.85, 1], [1, 0.9, 0.6]);
+    // const heroFade = useTransform(scrollYProgress, [0, 0.85, 1], [1, 0.9, 0.6]);
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -111,23 +112,14 @@ export const Hero: React.FC = () => {
     return (
         <section
             ref={containerRef}
-            className="relative w-full min-h-screen bg-ink text-paper overflow-hidden flex flex-col justify-between p-6 md:p-12"
+            className="relative w-full min-h-screen bg-ink text-paper overflow-hidden flex justify-center p-6 md:p-12"
             id="hero"
         >
             {/* Background */}
             <motion.div
                 className="absolute inset-0 z-0 overflow-hidden"
-                style={{ y: mediaY, scale: mediaScale, opacity: heroFade }}
-            >
-                <canvas ref={canvasRef} className="absolute inset-0 w-full h-full object-cover opacity-40" />
-                <div className="absolute inset-0 bg-linear-to-r from-ink via-ink/90 to-transparent z-10" />
-                <div className="absolute inset-0 bg-linear-to-t from-ink via-transparent to-ink/40 z-10" />
-            </motion.div>
-
-            {/* Portrait — right side, scroll parallax */}
-            <motion.div
-                className="absolute right-0 top-0 bottom-0 w-full md:w-[52%] lg:w-[46%] z-5 pointer-events-none"
                 style={{ y: portraitY, scale: portraitScale, opacity: portraitOpacity }}
+
             >
                 <motion.div
                     className="relative h-full w-full"
@@ -135,11 +127,15 @@ export const Hero: React.FC = () => {
                     animate={{ clipPath: 'inset(0% 0 0 0)' }}
                     transition={{ duration: 1.2, delay: 0.4, ease: [0.76, 0, 0.24, 1] }}
                 >
-                    <img
-                        src={`https://images.meigen.ai/generations/2026-07/a543b085-dc25-4ed3-94e2-b091bacab9a8.webp`}
-                        alt="Manas Jha portrait"
-                        className="absolute inset-0 w-full h-full object-cover object-top md:object-[center_15%]"
+                    <video
+                        src={portraitVideo}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute bg-accent inset-0 w-full h-full object-cover object-top md:object-[center_15%]"
                     />
+
 
                     {/* Scroll-driven scan line echoing the portrait's red beam */}
                     <motion.div
@@ -155,6 +151,8 @@ export const Hero: React.FC = () => {
                     <div className="absolute inset-0 bg-linear-to-t from-ink via-transparent to-ink/30" />
                 </motion.div>
             </motion.div>
+
+
 
             {/* Left text column */}
             <div className="relative z-10 flex flex-col justify-between flex-1 w-full">
