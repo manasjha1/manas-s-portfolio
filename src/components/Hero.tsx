@@ -223,7 +223,7 @@ export const Hero: React.FC = () => {
                             animate={{ y: 0 }}
                             transition={{
                                 duration: 0.9,
-                                delay: 0.8,
+                                delay: 2.4,
                                 ease: [0.76, 0, 0.24, 1],
                             }}
                         >
@@ -237,7 +237,7 @@ export const Hero: React.FC = () => {
                             animate={{ y: 0 }}
                             transition={{
                                 duration: 0.9,
-                                delay: 0.9,
+                                delay: 2.6,
                                 ease: [0.76, 0, 0.24, 1],
                             }}
                         >
@@ -253,7 +253,7 @@ export const Hero: React.FC = () => {
                             animate={{ y: 0 }}
                             transition={{
                                 duration: 0.9,
-                                delay: 0.9,
+                                delay: 2.9,
                                 ease: [0.76, 0, 0.24, 1],
                             }}
                         >

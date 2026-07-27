@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import manasPortrait from '/src/assets/manasPortrait.png'
 
 export const Footer: React.FC = () => {
     const cinematicRef = useRef<HTMLDivElement>(null);
@@ -83,7 +84,7 @@ export const Footer: React.FC = () => {
                         {/* Middle logo / graphic */}
                         <div className="my-10 flex flex-col justify-center items-center text-center">
                             <img
-                                src="https://images.meigen.ai/generations/2026-07/a5534d59-75eb-405c-9882-45c8b63933a3.webp"
+                                src={manasPortrait}
                                 alt="Manas Jha Photo"
                             />
                         </div>

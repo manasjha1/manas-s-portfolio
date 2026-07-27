@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useMotionValue, animate, type Easing } from 'framer-motion';
+import manasJhaPortrait from '/src/assets/manasJhaPortrait.png'
 
 // An animated counter component
 const CounterItem: React.FC<{ value: number; suffix?: string; label: string }> = ({ value, suffix = '', label }) => {
@@ -55,7 +56,7 @@ export const Intro: React.FC = () => {
         visible: {
             y: 0,
             transition: {
-                duration: 0.6,
+                duration: 1.6,
                 ease: customEase,
             },
         },
@@ -65,9 +66,33 @@ export const Intro: React.FC = () => {
         <section
             ref={containerRef}
             id="about"
-            className="w-full bg-paper text-ink px-6 py-24 md:py-36 global-border-hairline border-t border-b overflow-hidden"
+            className="w-full bg-paper text-ink px-6 py-24 md:py-36 global-border-hairline border-t overflow-hidden"
         >
             <div className="max-w-7xl mx-auto">
+                <div className='flex items-center justify-between border-b pb-6 my-5'>
+                    <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-ink leading-none">
+                        01 / BIOGRAPHY
+                    </span>
+                    <span className='font-sans text-[12px] uppercase tracking-widest font-semibold text-ink leading-none'>&copy; 2026</span>
+                </div>
+                {/* Headers Intro */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={inView ? "visible" : "hidden"}
+                    className="flex flex-col gap-4 my-12 text-left"
+                >
+                    <div className="flex flex-col font-display text-3xl md:text-9xl font-medium tracking-tight leading-tight select-none">
+                        {["BCA student turned frontend", "builder — self-taught through", "shipping real projects."].map((line, idx) => (
+                            <div key={idx} className="overflow-hidden">
+                                <motion.span variants={lineVariants} className="block">
+                                    {line}
+                                </motion.span>
+                            </div>
+                        ))}
+                    </div>
+                </motion.div>
+
                 {/* Intro Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
@@ -75,13 +100,13 @@ export const Intro: React.FC = () => {
                     <div className="lg:col-span-4 flex justify-center lg:justify-start">
                         <motion.div
                             className="relative w-full max-w-[320px] aspect-4/5 bg-neutral-300 portrait-clip overflow-hidden shadow-xl"
-                            initial={{ opacity: 0, scale: 0.95 }}
+                            initial={{ opacity: 0, scale: 1.95 }}
                             animate={inView ? { opacity: 1, scale: 1 } : {}}
                             transition={{ duration: 0.8, ease: 'easeOut' }}
                         >
                             {!imageError ? (
                                 <img
-                                    src="https://images.meigen.ai/generations/2026-07/d47bc070-5252-4b89-9137-a159023356f5.webp"
+                                    src={manasJhaPortrait}
                                     alt="Manas Jha"
                                     onError={() => setImageError(true)}
                                     className="w-full h-full object-cover grayscale contrast-[1.10] hover:grayscale-20 transition-all duration-700"
@@ -104,27 +129,6 @@ export const Intro: React.FC = () => {
                     {/* About Copy block (Grid 8) */}
                     <div className="lg:col-span-8 flex flex-col gap-10">
 
-                        {/* Headers */}
-                        <motion.div
-                            variants={containerVariants}
-                            initial="hidden"
-                            animate={inView ? "visible" : "hidden"}
-                            className="flex flex-col gap-4 text-left"
-                        >
-                            <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-accent leading-none">
-                                01 / BIOGRAPHY
-                            </span>
-
-                            <div className="flex flex-col font-display text-3xl md:text-5xl font-medium tracking-tight leading-tight select-none">
-                                {["BCA student turned frontend", "builder — self-taught through", "shipping real projects."].map((line, idx) => (
-                                    <div key={idx} className="overflow-hidden">
-                                        <motion.span variants={lineVariants} className="block">
-                                            {line}
-                                        </motion.span>
-                                    </div>
-                                ))}
-                            </div>
-                        </motion.div>
 
                         {/* Description Text */}
                         <motion.div
