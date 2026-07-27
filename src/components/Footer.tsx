@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import manasPortrait from '/src/assets/manasPortrait.png'
+import manasPortrait from '/src/assets/manasJhaPortrait.png'
 
 export const Footer: React.FC = () => {
     const cinematicRef = useRef<HTMLDivElement>(null);
