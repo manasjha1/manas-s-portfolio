@@ -10,7 +10,7 @@ export const Engagement: React.FC = () => {
             details: 'Available for immediate remote roles or Delhi-NCR hybrids. Committed to shipping clean components, fixing design bugs, and writing structured code.',
             theme: 'light',
             cta: 'Request Resume ↗',
-            link: 'mailto:manasjha@gmail.com?subject=Resume%20Request&body=Hi%20Manas,%0A%0AI%20would%20like%20to%20request%20your%20latest%20resume.%0A%0AThanks,',
+            link: 'mailto:manasjha384@gmail.com?subject=Resume%20Request&body=Hi%20Manas,%0A%0AI%20would%20like%20to%20request%20your%20latest%20resume.%0A%0AThanks,',
         },
         {
             num: '02',
@@ -19,7 +19,7 @@ export const Engagement: React.FC = () => {
             details: 'Flexible hours, project-tied deliverables. Focusing on semantic layouts, Framer Motion transitions, and fully functional API dashboard tools.',
             theme: 'light',
             cta: 'Hire as Freelancer ↗',
-            link: 'mailto:your-email@gmail.com?subject=Freelance%20Project%20Inquiry&body=Hi%20Manas,%0A%0AI%20am%20interested%20in%20working%20with%20you%20on%20a%20freelance%20project.%0A%0AProject%20details:%0A%0ARegards,',
+            link: 'mailto:manasjha384@gmail.com?subject=Freelance%20Project%20Inquiry&body=Hi%20Manas,%0A%0AI%20am%20interested%20in%20working%20with%20you%20on%20a%20freelance%20project.%0A%0AProject%20details:%0A%0ARegards,',
         },
         {
             num: '03',
@@ -28,7 +28,7 @@ export const Engagement: React.FC = () => {
             details: 'Deepening JS engineering foundations, studying data systems, and mastering node service layer routing until graduation. Building real apps.',
             theme: 'dark',
             cta: 'Connect for Future Role ↗',
-            link: 'mailto:your-email@gmail.com?subject=Future%20Job%20Opportunity&body=Hi%20Manas,%0A%0AI%20would%20like%20to%20connect%20with%20you%20regarding%20a%20potential%20future%20opportunity.%0A%0ACompany:%0ARole:%0A%0ARegards,',
+            link: 'mailto:manasjha384@gmail.com?subject=Future%20Job%20Opportunity&body=Hi%20Manas,%0A%0AI%20would%20like%20to%20connect%20with%20you%20regarding%20a%20potential%20future%20opportunity.%0A%0ACompany:%0ARole:%0A%0ARegards,',
         },
     ];
 
