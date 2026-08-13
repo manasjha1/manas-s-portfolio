@@ -132,7 +132,7 @@ export const Footer: React.FC = () => {
                                 email address
                             </span>
                             <a
-                                href="mailto:manasjha384@gmail.com"
+                                href="https://mail.google.com/mail/?view=cm&fs=1&to=manasjha384@gmail.com"
                                 className="font-display font-medium text-lg md:text-2xl uppercase tracking-wide hover:text-accent transition-colors duration-300 wrap-break-word"
                                 data-cursor="hover"
                             >
