@@ -10,7 +10,7 @@ export const Engagement: React.FC = () => {
             details: 'Available for immediate remote roles or Delhi-NCR hybrids. Committed to shipping clean components, fixing design bugs, and writing structured code.',
             theme: 'light',
             cta: 'Request Resume ↗',
-            link: 'mailto:manasjha384@gmail.com?subject=Resume%20Request&body=Hi%20Manas,%0A%0AI%20would%20like%20to%20request%20your%20latest%20resume.%0A%0AThanks,',
+            link: 'https://mail.google.com/mail/?view=cm&fs=1&to=your-email@gmail.com&su=Resume%20Request&body=Hi%20Manas%2C%0A%0AI%20would%20like%20to%20request%20your%20latest%20resume.%0A%0AThanks%2C',
         },
         {
             num: '02',
