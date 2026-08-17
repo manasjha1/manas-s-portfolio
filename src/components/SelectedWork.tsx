@@ -13,8 +13,6 @@ interface Project {
     fallbackGradient: string;
 }
 
-const STICKY_TOP = 112;
-
 interface ProjectCardProps {
     project: Project;
     index: number;
@@ -22,7 +20,6 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, total }) => {
-    const runwayRef = useRef<HTMLDivElement>(null);
     const cardRef = useRef<HTMLDivElement>(null);
     const inView = useInView(cardRef, { once: true, margin: "-10% 0px" });
     const [imageError, setImageError] = useState(false);
@@ -30,39 +27,41 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, total }) => {
     const isLast = index === total - 1;
 
     const { scrollYProgress } = useScroll({
-        target: runwayRef,
-        offset: ["start end", "end start"],
+        target: cardRef,
+        offset: ["start start", "end start"], // tracks as this card scrolls under the next one
     });
 
-    const cardScale = useTransform(
+    const scale = useTransform(scrollYProgress, [0, 1], [1, isLast ? 1 : 0.94]);
+    const rotate = useTransform(
         scrollYProgress,
-        [0, 0.35, 0.75, 1],
-        [0.94, 1, 1, 0.96],
+        [0, 1],
+        [0, isLast ? 0 : index % 2 === 0 ? -4 : 4]
     );
-    const cardY = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
+    const opacity = useTransform(scrollYProgress, [0, 1], [1, isLast ? 1 : 0.5]);
+
+    const stickyTopOffset = 180 + index * 24;
 
     return (
         <div
-            ref={runwayRef}
-            className={`relative ${isLast ? "min-h-[70vh]" : "min-h-[115vh]"}`}
+            ref={cardRef}
+            className={`relative w-full ${isLast ? "mb-12" : "mb-28 md:mb-36"}`}
         >
             <motion.div
-                ref={cardRef}
-                className="sticky top-20 w-full"
+                className="sticky w-full"
                 style={{
-                    top: STICKY_TOP,
-                    zIndex: index + 1,
-                    scale: cardScale,
-                    y: cardY,
+                    top: `${stickyTopOffset}px`,
+                    zIndex: (index + 1) * 10,
                 }}
             >
                 <motion.div
-                    className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center rounded-[3px] p-6 md:p-10"
-                    initial={{ opacity: 0, y: 60 }}
+                    className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center rounded-lg p-6 md:p-10 bg-paper border border-ink/15 shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
                     style={{
-                        zIndex: index + 1,
+                        scale,
+                        rotate,
+                        opacity,
                     }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    initial={{ opacity: 0, y: 60 }}
+                    animate={inView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
                 >
                     {/* Media column */}
@@ -235,18 +234,25 @@ export const SelectedWork: React.FC = () => {
         <section
             ref={containerRef}
             id="projects"
-            className="relative w-full bg-paper text-ink px-6 py-24 md:py-36 global-border-hairline border-b overflow-hidden"
+            className="relative w-full bg-paper text-ink px-6 pt-16 pb-24 md:pt-24 md:pb-36 global-border-hairline border-b"
         >
             <div className="max-w-7xl mx-auto">
-                <div className="relative mb-16 md:mb-24 text-left">
-                    <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-accent leading-none block mb-2">
-                        02 / PORTFOLIO
-                    </span>
-                    <h2 className="font-display font-medium text-4xl md:text-7xl uppercase tracking-tighter text-ink">
-                        SELECTED WORK
-                    </h2>
+                {/* Sticky Heading Container */}
+                <div className="sticky top-16 md:top-20 z-50 py-4 md:py-6 mb-8 md:mb-16 transition-all duration-300 flex flex-col md:flex-row md:items-end justify-between">
+                    <div>
+                        <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-accent leading-none block mb-2">
+                            02 / PORTFOLIO
+                        </span>
+                        <h2 className="font-display font-medium text-4xl md:text-6xl lg:text-7xl uppercase tracking-tighter text-ink leading-none">
+                            SELECTED WORK
+                        </h2>
+                    </div>
+                    <div className="hidden md:flex items-center space-x-2 text-xs font-sans uppercase tracking-widest opacity-60 mt-2 md:mt-0">
+                        <span>Featured Projects ({projects.length})</span>
+                    </div>
                 </div>
 
+                {/* Projects List */}
                 <div className="relative">
                     {projects.map((project, idx) => (
                         <ProjectCard
@@ -261,3 +267,4 @@ export const SelectedWork: React.FC = () => {
         </section>
     );
 };
+
