@@ -82,7 +82,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, total }) => {
                                         src={project.imageSrc}
                                         alt={project.title}
                                         onError={() => setImageError(true)}
-                                        className="w-full h-full object-cover grayscale contrast-[1.05] group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out"
+                                        className="w-fit h-full object-cover grayscale contrast-[1.05] group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out"
                                     />
                                 ) : (
                                     <div
@@ -201,7 +201,7 @@ export const SelectedWork: React.FC = () => {
             tag: "E-Commerce Cart Application",
             liveUrl: "https://cart-handling-app.vercel.app/",
             sourceCode: "https://github.com/manasjha1/Cart-Handling-app",
-            imageSrc: "/assets/project-cart.png",
+            imageSrc: "https://i.pinimg.com/1200x/28/b2/ba/28b2ba509812a363ef01a2dbf951d8ad.jpg",
             fallbackGradient: "linear-gradient(135deg, #c24f20 0%, #0b0b0b 100%)",
         },
         {
@@ -213,7 +213,7 @@ export const SelectedWork: React.FC = () => {
             tag: "Productivity",
             liveUrl: "https://todo-app-c31x.vercel.app/",
             sourceCode: "https://github.com/manasjha1/Todo_app",
-            imageSrc: "/assets/project-todo.png",
+            imageSrc: "https://i.pinimg.com/736x/18/4d/7d/184d7dff91dd056d7725d9f9027cece1.jpg",
             fallbackGradient: "linear-gradient(135deg, #d7ff45 0%, #0b0b0b 100%)",
         },
         {
@@ -223,9 +223,9 @@ export const SelectedWork: React.FC = () => {
                 "Interactive dashboard checking real-time elements using OpenWeatherMap REST calls. Includes custom async loaders, API error notifications, and high-fidelity layouts styled in glassmorphism.",
             tech: ["React.js", "Vite", "OpenWeather API", "Tailwind"],
             tag: "API Integration",
-            liveUrl: "https://github.com/manasjha1/weather-react",
+            liveUrl: "https://manasjha1.github.io/weather-app/",
             sourceCode: "https://github.com/manasjha1/weather-app",
-            imageSrc: "/assets/project-weather.png",
+            imageSrc: "src/assets/weatherApp.png",
             fallbackGradient: "linear-gradient(135deg, #5b5b54 0%, #0b0b0b 100%)",
         },
     ];

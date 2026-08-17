@@ -130,7 +130,7 @@ export const Hero: React.FC = () => {
         >
             {/* Background */}
             <motion.div
-                className="absolute inset-0 z-0 grayscale-100 overflow-hidden"
+                className="absolute inset-0 z-0 overflow-hidden"
                 style={{ y: portraitY, scale: portraitScale, opacity: portraitOpacity }}
             >
                 <motion.div
@@ -145,7 +145,7 @@ export const Hero: React.FC = () => {
                         loop
                         muted
                         playsInline
-                        className="absolute bg-accent inset-0 w-full h-full object-cover object-top md:object-[center_15%]"
+                        className="absolute inset-0 w-full h-full object-cover object-top md:object-[center_15%]"
                     />
 
                     {/* Scroll-driven scan line echoing the portrait's red beam */}
