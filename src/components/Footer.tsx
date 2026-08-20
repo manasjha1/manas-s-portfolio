@@ -57,14 +57,14 @@ export const Footer: React.FC = () => {
                         <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-accent block mb-4">
                             06 / CLOSING
                         </span>
-                        <h2 className="font-display font-medium text-4xl md:text-7xl uppercase tracking-tighter leading-none select-none">
+                        <h2 className="font-display font-medium text-3xl sm:text-5xl md:text-7xl uppercase tracking-tighter leading-none select-none">
                             STILL EARLY IN THE JOURNEY — BUT BUILDING FAST, LEARNING FASTER.
                         </h2>
                     </div>
 
                     {/* Animated card: Rotated ~18deg, translates on scroll */}
                     <motion.div
-                        className="w-72 aspect-3/4 bg-paper text-ink p-6 border border-paper/10 rounded-[3px] shadow-2xl relative flex flex-col justify-between self-center lg:self-auto rotate-[-18deg]"
+                        className="w-60 sm:w-72 aspect-3/4 bg-paper text-ink p-5 sm:p-6 border border-paper/10 rounded-[3px] shadow-2xl relative flex flex-col justify-between self-center lg:self-auto -rotate-12 sm:rotate-[-18deg] scale-90 sm:scale-100"
                         style={{
                             x: cardX,
                             opacity: cardOpacity,
@@ -113,7 +113,7 @@ export const Footer: React.FC = () => {
                         <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-accent leading-none">
                             07 / CONTACT
                         </span>
-                        <h2 className="font-display font-bold text-5xl md:text-8xl uppercase tracking-tighter leading-none select-none">
+                        <h2 className="font-display font-bold text-3xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-none select-none">
                             LET'S BUILD
                             <br />
                             SOMETHING.
@@ -133,7 +133,7 @@ export const Footer: React.FC = () => {
                             </span>
                             <a
                                 href="https://mail.google.com/mail/?view=cm&fs=1&to=manasjha384@gmail.com"
-                                className="font-display font-medium text-lg md:text-2xl uppercase tracking-wide hover:text-accent transition-colors duration-300 wrap-break-word"
+                                className="font-display font-medium text-base sm:text-lg md:text-2xl uppercase tracking-wide hover:text-accent transition-colors duration-300 break-all"
                                 data-cursor="hover"
                             >
                                 manasjha384@gmail.com

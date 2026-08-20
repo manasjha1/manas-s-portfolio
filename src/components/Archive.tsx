@@ -77,7 +77,7 @@ export const Archive: React.FC = () => {
                         <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-accent leading-none">
                             05 / LOGBOOK
                         </span>
-                        <h2 className="font-display font-medium text-4xl md:text-6xl uppercase tracking-tighter">
+                        <h2 className="font-display font-bold text-4xl md:text-6xl uppercase tracking-tighter">
                             LEARNING LOG
                         </h2>
                     </div>

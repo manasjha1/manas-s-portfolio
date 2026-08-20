@@ -45,7 +45,7 @@ export const Engagement: React.FC = () => {
                         <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-accent leading-none">
                             04 / AVAILABILITY
                         </span>
-                        <h2 className="font-display font-medium text-4xl md:text-6xl uppercase tracking-tighter">
+                        <h2 className="font-display font-bold text-4xl md:text-6xl uppercase tracking-tighter">
                             WAYS TO WORK
                         </h2>
                     </div>
@@ -55,7 +55,7 @@ export const Engagement: React.FC = () => {
                 </div>
 
                 {/* Hover Expand Plans Grid */}
-                <div className="flex flex-col md:flex-row md:items-stretch gap-6 w-full mt-16 min-h-120">
+                <div className="flex flex-col md:flex-row md:items-stretch gap-6 w-full mt-16 min-h-0 md:min-h-120">
                     {cards.map((card) => {
                         const isDark = card.theme === 'dark';
                         return (

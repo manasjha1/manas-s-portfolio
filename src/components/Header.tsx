@@ -46,14 +46,14 @@ export const Header: React.FC = () => {
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
                     <a
                         href="#"
-                        className="font-display font-medium text-lg leading-none uppercase tracking-wider group"
+                        className="font-display font-semibold text-lg leading-none uppercase tracking-wider group"
                     >
                         <span>MANAS JHA</span>
                         <Dot className='text-accent ml-1 group-hover:scale-150 inline-block transition-transform duration-300' />
                     </a>
 
                     {/* Desktop Nav Links */}
-                    <nav className="hidden md:flex items-center space-x-8">
+                    <nav className="hidden lg:flex items-center space-x-8">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
@@ -69,7 +69,7 @@ export const Header: React.FC = () => {
                     {/* Mobile Menu Trigger */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden flex flex-col justify-center items-center w-8 h-8 relative group"
+                        className="lg:hidden flex flex-col justify-center items-center w-8 h-8 relative group"
                         aria-label="Toggle Menu"
                     >
                         <span

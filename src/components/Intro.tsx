@@ -82,7 +82,7 @@ export const Intro: React.FC = () => {
                     animate={inView ? "visible" : "hidden"}
                     className="flex flex-col gap-4 my-12 text-left"
                 >
-                    <div className="flex flex-col font-display text-3xl md:text-9xl font-medium tracking-tight leading-tight select-none">
+                    <div className="flex flex-col font-display text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-medium tracking-tight leading-tight select-none">
                         {["BCA student turned frontend", "builder — self-taught through", "shipping real projects."].map((line, idx) => (
                             <div key={idx} className="overflow-hidden">
                                 <motion.span variants={lineVariants} className="block">

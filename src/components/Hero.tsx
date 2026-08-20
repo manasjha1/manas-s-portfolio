@@ -202,7 +202,7 @@ export const Hero: React.FC = () => {
                         initial={{ y: "100%" }}
                         animate={{ y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6, ease: [0.76, 0, 0.24, 1] }}
-                        className="flex items-end mt-40 gap-2"
+                        className="flex flex-wrap items-end mt-16 sm:mt-24 md:mt-40 gap-x-6 gap-y-2"
                         data-cursor="hover"
                     >
                         {/* <Dot className="w-1.5 h-1.5 rounded-full text-accent bg-accent animate-ping" /> */}
@@ -215,10 +215,10 @@ export const Hero: React.FC = () => {
                     </motion.div>
                 </div>
                 {/* Title */}
-                <div className="w-full max-h-26 flex gap-20 place-items-center font-display leading-[0.30] uppercase tracking-tighter">
+                <div className="w-full flex flex-wrap sm:flex-nowrap gap-3 sm:gap-8 md:gap-14 lg:gap-20 place-items-center font-display leading-tight sm:leading-[0.30] uppercase tracking-tighter my-4 sm:my-0">
                     <div className="py-1 select-none">
                         <motion.h1
-                            className="text-[16vw] font-bold tracking-tighter text-paper"
+                            className="text-[14vw] sm:text-[16vw] font-bold tracking-tighter text-paper"
                             initial={{ y: "100%" }}
                             animate={{ y: 0 }}
                             transition={{
@@ -230,9 +230,9 @@ export const Hero: React.FC = () => {
                             MANAS
                         </motion.h1>
                     </div>
-                    <div className="py-1 select-none">
+                    <div className="py-1 select-none hidden sm:block">
                         <motion.h1
-                            className="text-[14vw] font-bold tracking-tighter text-accent"
+                            className="text-[12vw] sm:text-[14vw] font-bold tracking-tighter text-accent"
                             initial={{ y: "100%" }}
                             animate={{ y: 0 }}
                             transition={{
