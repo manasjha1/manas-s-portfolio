@@ -245,7 +245,7 @@ export const SelectedWork: React.FC = () => {
         <section
             ref={containerRef}
             id="projects"
-            className="relative w-full bg-acid text-ink px-6 pt-16 pb-24 md:pt-24 md:pb-36 global-border-hairline border-b"
+            className="relative w-full bg-paper text-ink px-6 pt-16 pb-24 md:pt-24 md:pb-36 global-border-hairline border-b"
         >
             <div className="max-w-7xl mx-auto">
                 {/* Sticky Heading Container */}
