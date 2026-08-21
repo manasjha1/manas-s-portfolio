@@ -199,6 +199,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, total }) => {
 
 export const SelectedWork: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
+    const headingRef = useRef<HTMLDivElement>(null);
+
+
 
     const projects: Project[] = [
         {
@@ -249,12 +252,15 @@ export const SelectedWork: React.FC = () => {
         >
             <div className="max-w-7xl mx-auto">
                 {/* Sticky Heading Container */}
-                <div className="sticky top-16 md:top-20 z-50 py-4 md:py-6 mb-8 md:mb-16 transition-all duration-300 flex flex-col md:flex-row md:items-end justify-between">
+                <div
+                    ref={headingRef}
+                    className="sticky top-16 md:top-20 z-50 py-4 md:py-6 mb-8 md:mb-16 transition-all duration-300 flex flex-col md:flex-row md:items-end justify-between"
+                >
                     <div>
                         <span className="font-sans text-[11px] uppercase tracking-widest font-semibold text-accent leading-none block mb-2">
                             02 / PORTFOLIO
                         </span>
-                        <h2 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl uppercase tracking-tighter text-ink leading-none">
+                        <h2 className={`font-display font-bold text-4xl md:text-6xl lg:text-7xl uppercase tracking-tighter text-ink leading-none`}>
                             SELECTED WORK
                         </h2>
                     </div>

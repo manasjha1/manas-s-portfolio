@@ -218,7 +218,7 @@ export const Hero: React.FC = () => {
                 <div className="w-full flex flex-wrap sm:flex-nowrap gap-3 sm:gap-8 md:gap-14 lg:gap-20 place-items-center font-display leading-tight sm:leading-[0.30] uppercase tracking-tighter my-4 sm:my-0">
                     <div className="py-1 select-none">
                         <motion.h1
-                            className="text-[14vw] sm:text-[16vw] font-bold tracking-tighter text-paper"
+                            className="text-[10vw] sm:text-[12vw] font-bold tracking-tighter text-paper"
                             initial={{ y: "100%" }}
                             animate={{ y: 0 }}
                             transition={{
