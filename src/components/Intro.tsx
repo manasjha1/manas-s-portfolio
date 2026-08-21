@@ -1,6 +1,38 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, useInView, useMotionValue, animate, type Easing } from 'framer-motion';
+import { motion, useInView, useMotionValue, useScroll, useSpring, useTransform, animate } from 'framer-motion';
 import manasJhaPortrait from '/src/assets/manasJhaPortrait.png'
+
+// Component for line-by-line text reveal while scrolling with added delay & spring physics
+const AnimatedLine: React.FC<{ line: string; index: number }> = ({ line, index }) => {
+    const ref = useRef<HTMLDivElement>(null);
+
+    // Stagger start & end viewport thresholds further apart (12% gap) for a more pronounced delay between lines while scrolling
+    const startVh = 80 - index * 10; // Line 0: 80%, Line 1: 68%, Line 2: 56%
+    const endVh = 52 - index * 10;   // Line 0: 52%, Line 1: 40%, Line 2: 28%
+
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: [`start ${startVh}%`, `start ${endVh}%`],
+    });
+
+    // Smooth spring physics adds a sleek motion delay
+    const smoothProgress = useSpring(scrollYProgress, {
+        stiffness: 70,
+        damping: 22,
+        restDelta: 0.001,
+    });
+
+    const y = useTransform(smoothProgress, [0, 1], ["115%", "0%"]);
+    const opacity = useTransform(smoothProgress, [0, 1], [0, 1]);
+
+    return (
+        <div ref={ref} className="overflow-hidden py-1">
+            <motion.span style={{ y, opacity }} className="block">
+                {line}
+            </motion.span>
+        </div>
+    );
+};
 
 // An animated counter component
 const CounterItem: React.FC<{ value: number; suffix?: string; label: string }> = ({ value, suffix = '', label }) => {
@@ -41,27 +73,6 @@ export const Intro: React.FC = () => {
     const inView = useInView(containerRef, { once: true, margin: '-20% 0px' });
     const [imageError, setImageError] = useState(false);
 
-    const containerVariants = {
-        hidden: {},
-        visible: {
-            transition: {
-                staggerChildren: 0.15,
-            },
-        },
-    };
-
-    const customEase: Easing = [0.6, 0.05, 0.01, 0.9];
-    const lineVariants = {
-        hidden: { y: "100%" },
-        visible: {
-            y: 0,
-            transition: {
-                duration: 1.6,
-                ease: customEase,
-            },
-        },
-    }
-
     return (
         <section
             ref={containerRef}
@@ -76,22 +87,17 @@ export const Intro: React.FC = () => {
                     <span className='font-sans text-[12px] uppercase tracking-widest font-semibold text-ink leading-none'>&copy; 2026</span>
                 </div>
                 {/* Headers Intro */}
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate={inView ? "visible" : "hidden"}
-                    className="flex flex-col gap-4 my-12 text-left"
-                >
+                <div className="flex flex-col gap-4 my-12 text-left">
                     <div className="flex flex-col font-display text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-medium tracking-tight leading-tight select-none">
-                        {["BCA student turned frontend", "builder — self-taught through", "shipping real projects."].map((line, idx) => (
-                            <div key={idx} className="overflow-hidden">
-                                <motion.span variants={lineVariants} className="block">
-                                    {line}
-                                </motion.span>
-                            </div>
+                        {[
+                            "BCA student turned frontend",
+                            "builder — self-taught through",
+                            "shipping real projects."
+                        ].map((line, idx) => (
+                            <AnimatedLine key={idx} line={line} index={idx} />
                         ))}
                     </div>
-                </motion.div>
+                </div>
 
                 {/* Intro Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">

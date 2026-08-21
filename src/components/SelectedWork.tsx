@@ -211,7 +211,7 @@ export const SelectedWork: React.FC = () => {
                 "A full-featured e-commerce style shopping cart module. Supports responsive grid items, add/remove functions, real-time quantity adjustments, price calculations, and component state persistence.",
             tech: ["React.js", "Tailwind CSS", "shadcn/ui", "React Router"],
             tag: "E-Commerce Cart Application",
-            liveUrl: "https://cart-handling-app.vercel.app/",
+            liveUrl: "https://cart-handling-app-git-master-manas-projects-ea65a3a7.vercel.app/",
             sourceCode: "https://github.com/manasjha1/Cart-Handling-app",
             imageSrc:
                 "https://i.pinimg.com/736x/38/7a/08/387a08aab393f1f4c044e130b79ce50f.jpg",
@@ -224,8 +224,8 @@ export const SelectedWork: React.FC = () => {
                 "A polished movie discovery application with Popular, Upcoming, and Top Rated categories, movie search, detailed movie pages, trailer playback, and personal watchlist management, built with React, TypeScript, React Router, Tailwind CSS, and shadcn/ui.",
             tech: ["React.js", "Tailwind CSS", "shadcn/ui", "Vercel", "React Router"],
             tag: "Productivity",
-            liveUrl: "https://todo-app-c31x.vercel.app/",
-            sourceCode: "https://github.com/manasjha1/Todo_app",
+            liveUrl: "https://cinemax-inky-beta.vercel.app/",
+            sourceCode: "https://github.com/manasjha1/my-movieSearch-app",
             imageSrc:
                 "https://i.pinimg.com/736x/18/4d/7d/184d7dff91dd056d7725d9f9027cece1.jpg",
             fallbackGradient: "linear-gradient(135deg, #d7ff45 0%, #0b0b0b 100%)",
